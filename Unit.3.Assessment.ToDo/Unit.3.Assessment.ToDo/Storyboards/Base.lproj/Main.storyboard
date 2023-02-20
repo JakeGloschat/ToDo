@@ -31,6 +31,9 @@
                                             <rect key="frame" x="211" y="0.0" width="150" height="27"/>
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="filled" title="Create"/>
+                                            <connections>
+                                                <action selector="createButtonTapped:" destination="fDA-Wc-xCu" eventType="touchUpInside" id="vxd-vO-f7q"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                 </stackView>
@@ -44,29 +47,32 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="EcY-X2-48w">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="toDoCell" id="EcY-X2-48w" customClass="ToDoListTableViewCell" customModule="Unit_3_Assessment_ToDo" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="109" width="393" height="50.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EcY-X2-48w" id="GTh-i8-j4T">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="50.666667938232422"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="362.66666666666669" height="50.666667938232422"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="dhV-7s-wsI">
-                                            <rect key="frame" x="8" y="8" width="377" height="34.666666666666664"/>
+                                            <rect key="frame" x="8" y="8" width="346.66666666666669" height="34.666666666666664"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="500" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lbf-qI-rsc">
                                                     <rect key="frame" x="0.0" y="0.0" width="52.333333333333336" height="34.666666666666664"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" image="checkmark.seal.fill" catalog="system"/>
+                                                    <connections>
+                                                        <action selector="isCompleteButtonTapped:" destination="EcY-X2-48w" eventType="touchUpInside" id="ogI-dh-CJg"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="(Thing to do)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jU6-wa-eFS">
-                                                    <rect key="frame" x="56.333333333333343" y="0.0" width="258.33333333333326" height="34.666666666666664"/>
+                                                    <rect key="frame" x="56.333333333333314" y="0.0" width="228" height="34.666666666666664"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Count)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u5P-47-cOx">
-                                                    <rect key="frame" x="318.66666666666669" y="0.0" width="58.333333333333314" height="34.666666666666664"/>
+                                                    <rect key="frame" x="288.33333333333331" y="0.0" width="58.333333333333314" height="34.666666666666664"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -84,7 +90,10 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="1EU-jt-pG4" kind="show" id="CdY-JH-ipO"/>
+                                    <outlet property="isCompleteButton" destination="lbf-qI-rsc" id="DhW-m4-v6l"/>
+                                    <outlet property="listCountLabel" destination="u5P-47-cOx" id="24l-53-3Fj"/>
+                                    <outlet property="toDoNameLabel" destination="jU6-wa-eFS" id="en8-X0-e3s"/>
+                                    <segue destination="1EU-jt-pG4" kind="show" identifier="toStepList" id="CdY-JH-ipO"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -94,15 +103,19 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="ToDo List" id="YJw-p6-3SD"/>
+                    <connections>
+                        <outlet property="createButton" destination="6lc-U2-hvt" id="JPa-X3-iPf"/>
+                        <outlet property="toDoTextField" destination="jxJ-eC-Zkc" id="CBe-Qt-FsY"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9GU-5W-Z6V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1090.8396946564885" y="-165.49295774647888"/>
         </scene>
-        <!--Tasks Table View Controller-->
+        <!--Step List Table View Controller-->
         <scene sceneID="wkF-eu-G7Y">
             <objects>
-                <tableViewController id="1EU-jt-pG4" customClass="TasksTableViewController" customModule="Unit_3_Assessment_ToDo" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="1EU-jt-pG4" customClass="StepListTableViewController" customModule="Unit_3_Assessment_ToDo" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="120-3M-NYk">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -123,6 +136,9 @@
                                             <rect key="frame" x="306.33333333333331" y="0.0" width="54.666666666666686" height="28"/>
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="filled" title="Add"/>
+                                            <connections>
+                                                <action selector="addButtonWasTapped:" destination="1EU-jt-pG4" eventType="touchUpInside" id="AfP-I6-tFk"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                 </stackView>
@@ -138,7 +154,7 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="JiL-zg-ZpN">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="StepCell" id="JiL-zg-ZpN" customClass="StepListTableViewCell" customModule="Unit_3_Assessment_ToDo" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="110" width="393" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JiL-zg-ZpN" id="TQi-MQ-zWL">
@@ -158,6 +174,9 @@
                                                     <rect key="frame" x="283.66666666666669" y="0.0" width="49" height="34.333333333333336"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" image="checkmark.square" catalog="system"/>
+                                                    <connections>
+                                                        <action selector="isCompleteButtonTapped:" destination="JiL-zg-ZpN" eventType="touchUpInside" id="Sas-gR-YQf"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </stackView>
@@ -167,6 +186,10 @@
                                         <constraint firstItem="8A9-1s-kOb" firstAttribute="centerY" secondItem="TQi-MQ-zWL" secondAttribute="centerY" id="bkx-t7-Imm"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="isCompleteButton" destination="113-hf-VzF" id="u2K-hw-Ti5"/>
+                                    <outlet property="stepNameLabel" destination="Ees-Yb-FhR" id="SQN-t4-icm"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -175,6 +198,10 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="KUr-17-qxg"/>
+                    <connections>
+                        <outlet property="addButton" destination="E6Z-Pd-W86" id="zMx-nx-Rmh"/>
+                        <outlet property="toDoNameTextField" destination="9vw-eo-fu4" id="y3K-6M-BxI"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oUc-e6-BJo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

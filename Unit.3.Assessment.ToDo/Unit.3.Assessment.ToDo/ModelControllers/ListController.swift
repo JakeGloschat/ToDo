@@ -31,6 +31,11 @@ class ListController {
         save()
     }
     
+    func toggleIsComplete(list: List) {
+        list.isComplete.toggle()
+        save()
+    }
+    
     // MARK: - Persistence
     private var url: URL? {
         guard let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first

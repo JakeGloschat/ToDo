@@ -18,6 +18,8 @@
 		23A2C96029A2D6A000FD251C /* ListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A2C95F29A2D6A000FD251C /* ListController.swift */; };
 		23A2C96229A2E42300FD251C /* ToDoListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A2C96129A2E42300FD251C /* ToDoListTableViewController.swift */; };
 		23A2C96429A2E43C00FD251C /* StepListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A2C96329A2E43C00FD251C /* StepListTableViewController.swift */; };
+		23A2C96829A2E5EC00FD251C /* ToDoListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A2C96729A2E5EC00FD251C /* ToDoListTableViewCell.swift */; };
+		23A2C96A29A2E5FF00FD251C /* StepListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A2C96929A2E5FF00FD251C /* StepListTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		23A2C95F29A2D6A000FD251C /* ListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListController.swift; sourceTree = "<group>"; };
 		23A2C96129A2E42300FD251C /* ToDoListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListTableViewController.swift; sourceTree = "<group>"; };
 		23A2C96329A2E43C00FD251C /* StepListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepListTableViewController.swift; sourceTree = "<group>"; };
+		23A2C96729A2E5EC00FD251C /* ToDoListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListTableViewCell.swift; sourceTree = "<group>"; };
+		23A2C96929A2E5FF00FD251C /* StepListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepListTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,8 +83,8 @@
 		2336AF3B29A1F5B7006A7525 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				23A2C96129A2E42300FD251C /* ToDoListTableViewController.swift */,
 				23A2C96329A2E43C00FD251C /* StepListTableViewController.swift */,
+				23A2C96129A2E42300FD251C /* ToDoListTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -126,6 +130,8 @@
 		23A2C96629A2E47000FD251C /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				23A2C96929A2E5FF00FD251C /* StepListTableViewCell.swift */,
+				23A2C96729A2E5EC00FD251C /* ToDoListTableViewCell.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -202,7 +208,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				23A2C95529A2B88200FD251C /* Step.swift in Sources */,
+				23A2C96829A2E5EC00FD251C /* ToDoListTableViewCell.swift in Sources */,
 				23A2C96429A2E43C00FD251C /* StepListTableViewController.swift in Sources */,
+				23A2C96A29A2E5FF00FD251C /* StepListTableViewCell.swift in Sources */,
 				23A2C95329A2AE4D00FD251C /* List.swift in Sources */,
 				2336AF2829A1E883006A7525 /* AppDelegate.swift in Sources */,
 				2336AF2A29A1E883006A7525 /* SceneDelegate.swift in Sources */,

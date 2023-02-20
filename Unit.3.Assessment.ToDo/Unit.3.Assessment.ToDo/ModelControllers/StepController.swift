@@ -11,7 +11,7 @@ class StepController {
     
     
     // MARK: - Functions
-    static func createStep(list: List, stepName: String) {
+    static func createStep(stepName: String) {
         let step = Step(step: stepName)
         list.steps.append(step)
         ListController.shared.save()
@@ -28,8 +28,8 @@ class StepController {
         ListController.shared.save()
     }
     
-    func toggleIsComplete(list: List) {
-        list.isComplete.toggle()
+    static func toggleIsComplete(step: Step) {
+        step.isComplete.toggle()
         ListController.shared.save()
     }
 }
